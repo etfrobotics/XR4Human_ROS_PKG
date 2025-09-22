@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainWatch</title>
+</head>
+<body>
+    <h1>Start Task</h1>
+    <form id="dataForm">
+        <input type="hidden" name="data" value="Hello, Flask!">
+        <button type="button" onclick="sendData()">Start !</button>
+    </form>
+    <script>
+        function sendData() {
+            const form = document.getElementById('dataForm');
+            const formData = new FormData(form);
+
+            fetch('/send_data', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert('Data sent successfully!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to send data.');
+            });
+        }
+    </script>
+</body>
+</html>

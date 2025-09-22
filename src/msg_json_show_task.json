@@ -1,0 +1,26 @@
+{
+    "id":"urn:ngsi-ld:Task:brainwatch:",
+    "type":"Task",
+    "isDefinedBy":{
+        "type":"Relationship",
+        "object":"urn:ngsi-ld:TaskDefinition:brainwatch:show-task-6"
+    },
+    "involves":{
+        "type":"Property",
+        "value":[
+            {
+                "type":"Relationship",
+                "object":"urn:ngsi-ld:Device:brainwatch:adin-1"
+            }
+        ]
+    },
+    "status":{
+        "value":"completed",
+        "type":"Property",
+        "observedAt":"2024-05-16T11:23:19Z"
+    },
+    "@context":[
+        "https://raw.githubusercontent.com/shop4cf/data-models/master/docs/shop4cfcontext.jsonld",
+        "https://smartdatamodels.org/context.jsonld"
+    ]
+}
